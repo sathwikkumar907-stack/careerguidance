@@ -1,0 +1,192 @@
+:root {
+  color-scheme: light;
+  --ink: #17211b;
+  --muted: #5e6b62;
+  --line: #d9ded8;
+  --panel: #ffffff;
+  --soft: #eff5f1;
+  --accent: #16715f;
+  --accent-2: #2557a7;
+  --warn: #a15c12;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, #f7faf8 0%, #eaf1ee 100%);
+}
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: end;
+  padding: 28px 0;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .78rem;
+}
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(2rem, 5vw, 4.6rem); line-height: .98; margin-bottom: 18px; max-width: 840px; }
+h2 { font-size: 1.35rem; margin-bottom: 6px; }
+h3 { font-size: 1rem; margin: 22px 0 10px; }
+.lede { font-size: 1.08rem; color: var(--muted); max-width: 760px; line-height: 1.6; }
+.status-card, .panel, .blueprint {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.status-card {
+  padding: 18px;
+  display: grid;
+  gap: 6px;
+  box-shadow: 0 18px 45px rgba(22, 113, 95, .08);
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.tabs, .stepper {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tab, .secondary {
+  background: #dde8e2;
+  color: var(--ink);
+}
+.tab.active, .primary {
+  background: var(--accent);
+  color: white;
+}
+.step {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #dfe8e4;
+  color: var(--muted);
+  font-size: .9rem;
+}
+.step.active { background: #cde9df; color: var(--accent); font-weight: 700; }
+.view { display: none; }
+.view.active { display: block; }
+.panel {
+  padding: 22px;
+  margin-top: 14px;
+}
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+.muted { color: var(--muted); line-height: 1.55; }
+.question-list {
+  display: grid;
+  gap: 16px;
+}
+.question {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+.question legend {
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 8px;
+}
+.option {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+  padding: 16px;
+}
+.score {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-2);
+  font-weight: 800;
+}
+.blueprint {
+  padding: 16px;
+  border-left: 5px solid var(--accent);
+  line-height: 1.6;
+}
+.roadmap, .analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.roadmap div, .metric {
+  background: var(--soft);
+  border-radius: 8px;
+  padding: 14px;
+}
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+select, textarea, input[type="range"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  font: inherit;
+}
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.hidden { display: none; }
+ul { padding-left: 18px; }
+li { margin: 6px 0; }
+@media (max-width: 780px) {
+  .hero { grid-template-columns: 1fr; }
+  .panel-head { display: grid; }
+  .shell { width: min(100% - 20px, 1180px); }
+}
