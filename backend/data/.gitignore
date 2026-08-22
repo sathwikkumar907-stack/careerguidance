@@ -1,9 +1,0 @@
-# Python environment & cache
-__pycache__/
-*.py[cod]
-*$py.class
-venv/
-.env
-
-# Generated data (optional, but good practice if built during CI/CD)
-# data/careers.json
